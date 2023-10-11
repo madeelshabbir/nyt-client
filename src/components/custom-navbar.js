@@ -1,4 +1,5 @@
-import { Container, Nav, NavLink, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 import LOGO_SVG from '../assets/images/logo.svg'
 import { NAV_LINKS } from '../fixtures/nav-links';
@@ -6,7 +7,7 @@ import { NAV_LINKS } from '../fixtures/nav-links';
 const CustomNavbar = () => {
   return (
     <Navbar bg="light" expand="lg" className='px-5'>
-      <Container fluid>
+      <Container>
         <Navbar.Brand href="/">
           <img
             src={LOGO_SVG}
@@ -21,7 +22,7 @@ const CustomNavbar = () => {
           <Nav className="mr-auto">
             {
               Object.keys(NAV_LINKS).map((key) => {
-                return <NavLink key={key} to={`/${key}`} className="nav-link mx-2">{NAV_LINKS[key]}</NavLink>
+                return <Nav.Link key={key} as={NavLink} to={`/${key}`} className="nav-link mx-2">{NAV_LINKS[key]}</Nav.Link>
               })
             }
           </Nav>
