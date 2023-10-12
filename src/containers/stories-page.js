@@ -24,7 +24,6 @@ const StoriesPage = ({ title }) => {
               <Col xs={12} sm={6} md={4} key={story.title}>
                 <CustomCard
                   title={story.title}
-                  abstract={story.abstract}
                   url={story.url}
                   image={story.multimedia && story.multimedia[0]?.url}
                   section={story.section}
